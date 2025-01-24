@@ -1,0 +1,9 @@
+FROM python:3.9-slim-bullseye
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir dash redis plotly
+
+COPY dashboard.py .
+
+CMD ["python", "dashboard.py"]
