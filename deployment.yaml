@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: serverless-redis
-        image: lucasmsp/serverless:redis
+        image: henriquerotsen/runtime:0.1
         imagePullPolicy: Always
         resources:
           requests:
@@ -36,6 +36,10 @@ spec:
             configMapKeyRef:
               name: outputkey
               key: REDIS_OUTPUT_KEY
+        - name: ZIP_FILE_PATH
+          value: ""
+        - name: ENTRY_FUNCTION
+          value: "handler"
       volumes:
       - name: pyfile
         configMap:
